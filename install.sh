@@ -3,7 +3,7 @@
 systemctl stop eslap-config
 systemctl stop nginx
 
-apt-get install nginx libpam0g-dev
+apt-get install -y nginx libpam0g-dev
 
 rm -rf /usr/lib/4seils
 mkdir /usr/lib/4seils
