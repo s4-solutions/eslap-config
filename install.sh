@@ -23,5 +23,6 @@ systemctl start eslap-config
 systemctl stop nginx
 systemctl start nginx
 
+rm -f eslap-config.tgz
 
 
