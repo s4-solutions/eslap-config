@@ -13,7 +13,6 @@ wget https://github.com/s4-solutions/eslap-config/raw/master/eslap-config.tgz
 tar xvfz eslap-config.tgz -C /usr/lib/4seils
 
 cp /usr/lib/4seils/nginx.conf /etc/nginx
-systemctl start nginx
 
 cp /usr/lib/4seils/eslap-config.service /etc/systemd/system
 systemctl daemon-reload
@@ -21,6 +20,8 @@ systemctl daemon-reload
 systemctl enable eslap-config
 systemctl start eslap-config
 
+systemctl stop nginx
+systemctl start nginx
 
 
 
