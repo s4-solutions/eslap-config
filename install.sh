@@ -18,6 +18,7 @@ systemctl start nginx
 cp /usr/lib/4seils/eslap-config.service /etc/systemd/system
 systemctl daemon-reload
 
+systemctl enable eslap-config
 systemctl start eslap-config
 
 
