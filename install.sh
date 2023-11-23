@@ -15,11 +15,12 @@ wget https://github.com/s4-solutions/eslap-config/raw/master/eslap-config.tgz
 tar xvfz eslap-config.tgz -C /tmp/4seils
 
 chown eslap-1118:eslap-1118 -R /tmp/4seils
-chmod +x /tmp/4seils/eslap_pre.sh eslap-config
 
 cp -rf /tmp/4seils/static_files /home/eslap-1118/eslap/bin
 cp -f /tmp/4seils/eslap-config /home/eslap-1118/eslap/bin
-cp -f /tmp/4seils/eslap_pre.sh /home/eslap-1118/eslap/bin
+cp -f /tmp/4seils/eslap_config_pre.sh /home/eslap-1118/eslap/bin
+
+chmod +x /home/eslap-1118/eslap/bin/eslap_config_pre.sh /home/eslap-1118/eslap/bin/eslap-config
 
 cp -f /tmp/4seils/nginx.conf /etc/nginx
 
@@ -36,3 +37,4 @@ rm -f eslap-config.tgz
 rm -rf /tmp/4seils
 
 systemctl disable unattended-upgrades
+systemctl stop unattended-upgrades
