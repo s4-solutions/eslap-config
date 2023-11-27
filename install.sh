@@ -5,7 +5,7 @@ systemctl stop nginx
 
 rm -rf /usr/lib/4seils
 
-apt-get install -y nginx libpam0g-dev
+apt-get install -y nginx libpam0g-dev sshpass
 
 rm -rf /tmp/4seils
 mkdir /tmp/4seils
@@ -21,6 +21,7 @@ cp -f /tmp/4seils/eslap-config /home/eslap-1118/eslap/bin
 cp -f /tmp/4seils/eslap_config_pre.sh /home/eslap-1118/eslap/bin
 
 chmod +x /home/eslap-1118/eslap/bin/eslap_config_pre.sh /home/eslap-1118/eslap/bin/eslap-config
+chown eslap-1118:eslap-1118 /home/eslap-1118/eslap/bin/ -R
 
 cp -f /tmp/4seils/nginx.conf /etc/nginx
 
