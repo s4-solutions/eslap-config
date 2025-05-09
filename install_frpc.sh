@@ -6,6 +6,7 @@ chmod 755 /home/eslap-1118/eslap/bin/frpc
 
 wget https://github.com/s4-solutions/eslap-config/raw/master/frpc.service
 cp -f frpc.service /etc/systemd/system/
+systemctl daemon-reload
 systemctl enable frpc
 
 FILE="/home/eslap-1118/eslap/config/device.yaml"
