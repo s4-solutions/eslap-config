@@ -1,0 +1,13 @@
+[Unit]
+Description=FRP Client Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/eslap-1118/eslap/bin/frpc -c /home/eslap-1118/eslap/config/frpc.toml
+Restart=on-failure
+RestartSec=30s
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
