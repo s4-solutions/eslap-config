@@ -1,10 +1,14 @@
 #!/bin/bash
 
 wget https://github.com/s4-solutions/eslap-config/raw/master/frpc
+sleep 3
+sync
 cp -f frpc /home/eslap-1118/eslap/bin
 chmod 755 /home/eslap-1118/eslap/bin/frpc
 
 wget https://github.com/s4-solutions/eslap-config/raw/master/frpc.service
+sleep 1
+sync
 cp -f frpc.service /etc/systemd/system/
 systemctl daemon-reload
 systemctl enable frpc
