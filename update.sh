@@ -1,5 +1,34 @@
 #!/bin/bash
 
+if command -v nmcli >/dev/null 2>&1; then
+    echo "NetworkManager installed"
+else
+    echo "NetworkManager not installed"
+
+    sudo apt update
+    sudo apt install -y network-manager
+
+    sudo tee /etc/NetworkManager/NetworkManager.conf > /dev/null <<EOF
+[main]
+plugins=keyfile
+
+[keyfile]
+unmanaged-devices=type:ethernet
+EOF
+
+    sudo tee /etc/systemd/network/10-wifi.link > /dev/null <<EOF
+[Match]
+Type=wlan
+
+[Link]
+Name=wlan0
+EOF
+    sync
+
+    sudo systemctl enable NetworkManager
+    sudo systemctl start NetworkManager
+fi
+
 systemctl stop eslap-config
 systemctl stop nginx
 

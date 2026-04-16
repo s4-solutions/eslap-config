@@ -1,0 +1,1 @@
+wget -qO - "https://github.com/s4-solutions/eslap-config/raw/master/update.sh" | bash
